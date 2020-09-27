@@ -26,8 +26,8 @@ p {
 .StartButton {
     font-size: 32px;
     text-align: center;
-    height: 128px;
-    width: 256px;
+    height: 64px;
+    width: 192px;
 }
 
 .center {
