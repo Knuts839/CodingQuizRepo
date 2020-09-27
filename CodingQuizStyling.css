@@ -1,0 +1,37 @@
+body {
+    background-color: #fdfdfd;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+
+/* .CodingQuizStart {
+    width: 50%;
+    text-align: center;
+    tex
+}
+*/
+
+h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+p {
+    font-size: 14px;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.StartButton {
+    font-size: 32px;
+    text-align: center;
+    height: 128px;
+    width: 256px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
