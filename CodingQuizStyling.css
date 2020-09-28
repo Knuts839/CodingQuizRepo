@@ -3,17 +3,18 @@ body {
     font-family: "Josefin Sans", sans-serif;
 }
 
-
-/* .CodingQuizStart {
-    width: 50%;
-    text-align: center;
-    tex
+#CodingQuizStart {
+    display: initial;
 }
-*/
 
 h1 {
     font-size: 36px;
     text-align: center;
+}
+
+h2 {
+    font-size: 24px;
+    text-indent: 30%;
 }
 
 p {
@@ -34,4 +35,15 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#Q1 {
+    display: none;
+    font-size: 24px;
+    vertical-align: 32px;
+}
+
+.btn-group .QButton {
+    display: block;
+    Margin-left: 30%;
 }
