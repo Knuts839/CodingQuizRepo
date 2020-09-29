@@ -3,6 +3,14 @@ var startButton = document.querySelector("#StartQuiz")
 
 startButton.addEventListener("click", StartQuiz)
 
+var countDownTime = 75 + 1;
+var finalCountdown = 0;
+var testComplete = false;
+
+function timePenalty() {
+    countDownTime -= 10;
+}
+
 function StartQuiz() {
     Countdown();
     document.getElementById("CodingQuizStart").style.display = "none";
@@ -12,7 +20,7 @@ function StartQuiz() {
 function Countdown() {
     // Set the number of seconds we're counting down from.
     // Adding one to timer so it does not look to the user that they are being short changed. Rube Golberg
-    var countDownTime = 75 + 1;
+
 
     // Update the count down every 1 second
     var x = setInterval(function() {
@@ -23,7 +31,8 @@ function Countdown() {
         document.getElementById("OlTimer").innerHTML = countDownTime + "s ";
 
         // If the count down is finished, we're done.
-        if (countDownTime < 0) {
+        if (countDownTime <= 0 || testComplete) {
+            finalCountdown = countDownTime;
             clearInterval(x);
             document.getElementById("OlTimer").innerHTML = "You are done.";
 
@@ -34,6 +43,7 @@ function Countdown() {
             document.getElementById("Q4").style.display = "none";
             document.getElementById("Q5").style.display = "none";
             document.getElementById("Quizdone").style.display = "initial";
+            document.getElementById("Quizdone").innerHTML = "Your Final Score is: " + finalCountdown.toString();
         }
     }, 1000);
 
@@ -59,6 +69,7 @@ function Q1a() {
     document.getElementById("Q2").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
 }
 
 function Q1b() {
@@ -67,6 +78,7 @@ function Q1b() {
     document.getElementById("Q2").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
 }
 
 function Q1c() {
@@ -83,6 +95,7 @@ function Q1d() {
     document.getElementById("Q2").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
 }
 
 /////////////////////////////////////////////////////
@@ -105,6 +118,7 @@ function Q2a() {
     document.getElementById("Q3").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
 }
 
 function Q2b() {
@@ -121,6 +135,7 @@ function Q2c() {
     document.getElementById("Q3").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
 }
 
 function Q2d() {
@@ -129,6 +144,7 @@ function Q2d() {
     document.getElementById("Q3").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
 }
 
 //////////////////////////////////////////////////////
@@ -151,6 +167,7 @@ function Q3a() {
     document.getElementById("Q4").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
 }
 
 function Q3b() {
@@ -159,6 +176,7 @@ function Q3b() {
     document.getElementById("Q4").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
 }
 
 function Q3c() {
@@ -167,6 +185,7 @@ function Q3c() {
     document.getElementById("Q4").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
 }
 
 function Q3d() {
@@ -197,6 +216,7 @@ function Q4a() {
     document.getElementById("Q5").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
 }
 
 function Q4b() {
@@ -213,6 +233,7 @@ function Q4c() {
     document.getElementById("Q5").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
 }
 
 function Q4d() {
@@ -221,6 +242,7 @@ function Q4d() {
     document.getElementById("Q5").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
 }
 
 //////////////////////////////////////////////////////
@@ -243,6 +265,8 @@ function Q5a() {
     document.getElementById("Quizdone").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
+    testComplete = true;
 }
 
 function Q5b() {
@@ -251,6 +275,8 @@ function Q5b() {
     document.getElementById("Quizdone").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
+    testComplete = true;
 }
 
 function Q5c() {
@@ -259,6 +285,7 @@ function Q5c() {
     document.getElementById("Quizdone").style.display = "initial";
     document.getElementById("IncorrectAnswer").style.display = "none";
     document.getElementById("CorrectAnswer").style.display = "initial";
+    testComplete = true;
 }
 
 function Q5d() {
@@ -267,4 +294,6 @@ function Q5d() {
     document.getElementById("Quizdone").style.display = "initial";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "initial";
+    timePenalty();
+    testComplete = true;
 }
