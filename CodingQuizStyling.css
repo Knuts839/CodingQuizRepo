@@ -83,3 +83,9 @@ p {
     font-size: 24px;
     Margin-left: 30%;
 }
+
+#Quizdone {
+    display: none;
+    font-size: 24px;
+    Margin-left: 30%;
+}

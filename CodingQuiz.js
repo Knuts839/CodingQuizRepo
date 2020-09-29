@@ -27,8 +27,8 @@ function Q1a() {
     var Que1 = document.querySelector("Q1");
     document.getElementById("Q1").style.display = "none";
     document.getElementById("Q2").style.display = "initial";
-    document.getElementById("IncorrectAnswer").style.display = "none";
-    document.getElementById("CorrectAnswer").style.display = "initial";
+    document.getElementById("CorrectAnswer").style.display = "none";
+    document.getElementById("IncorrectAnswer").style.display = "initial";
 }
 
 function Q1b() {
