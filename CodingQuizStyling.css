@@ -3,6 +3,11 @@ body {
     font-family: "Josefin Sans", sans-serif;
 }
 
+#OlTimer {
+    margin-left: 70%;
+    font-size: 24px;
+}
+
 #CodingQuizStart {
     display: initial;
 }

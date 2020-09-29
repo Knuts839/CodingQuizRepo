@@ -10,32 +10,30 @@ function StartQuiz() {
 }
 
 function Countdown() {
-    // Set the date we're counting down to
-    var countDownDate = 121; // new Date().getTime() + 75000 + 60000; // Rube Golberg
+    // Set the number of seconds we're counting down from.
+    // Adding one to timer so it does not look to the user that they are being short changed. Rube Golberg
+    var countDownTime = 75 + 1;
 
     // Update the count down every 1 second
     var x = setInterval(function() {
 
-        // Get today's date and time
-        var now = new Date().getTime();
+        countDownTime -= 1;
 
-        // Find the distance between now and the count down date
-        var distance = countDownDate - now;
+        // Display the result in the element with id="OlTimer"
+        document.getElementById("OlTimer").innerHTML = countDownTime + "s ";
 
-        // Time calculations for days, hours, minutes and seconds
-        // var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        // var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        // var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        countDownDate -= 1;
-        var seconds = countDownDate; //Math.floor((distance % (1000 * 60)) / 1000);
-
-        // Display the result in the element with id="demo"
-        document.getElementById("demo").innerHTML = seconds + "s ";
-
-        // If the count down is finished, write some text
-        if (countDownDate < 0) {
+        // If the count down is finished, we're done.
+        if (countDownTime < 0) {
             clearInterval(x);
-            document.getElementById("demo").innerHTML = "EXPIRED";
+            document.getElementById("OlTimer").innerHTML = "You are done.";
+
+            // Hide questions and show Quiz Done.
+            document.getElementById("Q1").style.display = "none";
+            document.getElementById("Q2").style.display = "none";
+            document.getElementById("Q3").style.display = "none";
+            document.getElementById("Q4").style.display = "none";
+            document.getElementById("Q5").style.display = "none";
+            document.getElementById("Quizdone").style.display = "initial";
         }
     }, 1000);
 
