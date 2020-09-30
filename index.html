@@ -17,7 +17,8 @@
     <div id="CodingQuizStart">
         <h1>Coding Quiz</h1>
         <p text-width="50%">The rules of this quiz are as follows: It is a multiple choice quiz about general coding knowledge. This quiz consists of five multiple choices questions with four choices each. You will have 2 minutes to answer all the questions in the quiz.
-            If you answer a question incorrectly a 10 second penalty will be applied. The test is over when you have answered the last question or the time allotted runs out. Click the Start button when you are ready to begin.</p>
+            If you answer a question incorrectly a 10 second penalty will be applied. The test is over when you have answered the last question or the time allotted runs out. Click the Start button when you are ready to begin.
+        </p>
         <br><br>
         <div class="center">
             <Input class="StartButton" id="StartQuiz" Type="button" value="Start Quiz" />
@@ -69,16 +70,24 @@
             <Input class="QButton" id="Q5B4" Type="button" value="D. booleans" />
         </div>
     </div>
-    <div id="Quizdone" value="Moo">
+    <div id="Quizdone">
         <h2>Quiz Done</h2>
+        <h2 id="MyScore"></h2>
+        <h2>Would you like to retake the test?</h2>
+        <div>
+            <input class="RestartButton" id="Restart" Type="button" value="Restart" />
+        </div>
+        <div class="FinalScores">
+            <input type="text" placeholder="Enter your initials and click save to save your score:" name="Initials" id="InitialsID" />
+            <input class="SaveBtn" id="SaveButton" Type="button" value="Save Score" />
+        </div>
     </div>
     <div id="CorrectAnswer">
-        <h2>Correct Answer</h2>
+        <h2>Your last answer was correct</h2>
     </div>
     <div id="IncorrectAnswer">
-        <h2>Wrong Answer</h2>
+        <h2>Your last answer was wrong</h2>
     </div>
-
 
     <script src="./CodingQuiz.js"></script>
 </body>

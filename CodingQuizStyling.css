@@ -36,6 +36,12 @@ p {
     width: 192px;
 }
 
+.RestartButton {
+    font-size: 18px;
+    text-align: center;
+    margin-left: 30%;
+}
+
 .center {
     display: flex;
     justify-content: center;
@@ -92,5 +98,9 @@ p {
 #Quizdone {
     display: none;
     font-size: 24px;
+    Margin-left: 30%;
+}
+
+.FinalScores {
     Margin-left: 30%;
 }

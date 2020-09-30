@@ -1,7 +1,12 @@
 // Start button is displaying default
-var startButton = document.querySelector("#StartQuiz")
+var startButton = document.querySelector("#StartQuiz");
+startButton.addEventListener("click", StartQuiz);
 
-startButton.addEventListener("click", StartQuiz)
+var restartButton = document.querySelector("#Restart");
+restartButton.addEventListener("click", ReStartQuiz);
+
+var saveScoreButton = document.querySelector("#SaveButton");
+saveScoreButton.addEventListener("click", SaveScore);
 
 var countDownTime = 75 + 1;
 var finalCountdown = 0;
@@ -11,10 +16,28 @@ function timePenalty() {
     countDownTime -= 10;
 }
 
+var scores = [];
+
+function SaveScore() {
+    var initials = document.getElementById("InitialsID").value;
+
+    localStorage.setItem("scores", JSON.stringify(initials + " " + finalCountdown.toString(), 2));
+
+}
+
 function StartQuiz() {
     Countdown();
     document.getElementById("CodingQuizStart").style.display = "none";
     document.getElementById("Q1").style.display = "initial";
+}
+
+function ReStartQuiz() {
+    countDownTime = 75 + 1;
+    testComplete = false;
+    document.getElementById("CorrectAnswer").style.display = "none";
+    document.getElementById("IncorrectAnswer").style.display = "none";
+    document.getElementById("Quizdone").style.display = "none";
+    document.getElementById("CodingQuizStart").style.display = "initial";
 }
 
 function Countdown() {
@@ -43,7 +66,7 @@ function Countdown() {
             document.getElementById("Q4").style.display = "none";
             document.getElementById("Q5").style.display = "none";
             document.getElementById("Quizdone").style.display = "initial";
-            document.getElementById("Quizdone").innerHTML = "Your Final Score is: " + finalCountdown.toString();
+            document.getElementById("MyScore").innerHTML = "Your Final Score is: " + finalCountdown.toString();
         }
     }, 1000);
 
@@ -297,3 +320,9 @@ function Q5d() {
     timePenalty();
     testComplete = true;
 }
+
+////Savefeature
+////////////////////////////////////////////////////
+var saveScore = document.querySelector("#Save-score");
+var saveForm = document.querySelector("#Save-form");
+var scoreList = document.querySelector("#Score-list");
