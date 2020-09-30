@@ -34,6 +34,7 @@ function StartQuiz() {
 function ReStartQuiz() {
     countDownTime = 75 + 1;
     testComplete = false;
+    document.getElementById("OlTimer").innerHTML = "";
     document.getElementById("CorrectAnswer").style.display = "none";
     document.getElementById("IncorrectAnswer").style.display = "none";
     document.getElementById("Quizdone").style.display = "none";
